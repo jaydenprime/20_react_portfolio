@@ -20,6 +20,7 @@ function App() {
   };
 
   return (
+    <section>
     <div>
       <Header>
         <Navbar
@@ -33,6 +34,7 @@ function App() {
       {currentSection === 'resume' && <Resume />}
       <Footer />
     </div>
+    </section>
   );
 }
 
