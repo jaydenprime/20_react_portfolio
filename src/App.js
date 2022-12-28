@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './components/Header.js';
@@ -12,36 +12,30 @@ import Portfolio from './pages/Portfolio.js';
 import Contact from './pages/Contact.js';
 import Resume from './pages/Resume.js';
 
-class App extends React.Component {
-  state = {
-    currentSection: 'about-me',
+function App() {
+  const [currentSection, setCurrentSection] = useState('about-me');
+
+  const handleNavbarClick = (section) => {
+    setCurrentSection(section);
   };
 
-  handleNavbarClick = (section) => {
-    this.setState({ currentSection: section });
-  };
-
-  render() {
-    const { currentSection } = this.state;
-
-    return (
-      <div>
-        <Header>
-          <Navbar
-            currentSection={currentSection}
-            onNavbarClick={this.handleNavbarClick}
-          />
-        </Header>
-        {currentSection === 'about-me' && <AboutMe />}
-        {currentSection === 'portfolio' && <Portfolio />}
-        {currentSection === 'contact' && <Contact />}
-        {currentSection === 'resume' && <Resume />}
-        <Footer />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Header>
+        <Navbar
+          currentSection={currentSection}
+          onNavbarClick={handleNavbarClick}
+        />
+      </Header>
+      {currentSection === 'about-me' && <AboutMe />}
+      {currentSection === 'portfolio' && <Portfolio />}
+      {currentSection === 'contact' && <Contact />}
+      {currentSection === 'resume' && <Resume />}
+      <Footer />
+    </div>
+  );
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-export default App
+export default App;
