@@ -1,11 +1,13 @@
 import React from 'react';
 import '../App.css'
 
-function Project(title, imageUrl) {
+function Project({ title, imageUrl }) {
+  return(
   <div className="projectPage">
     <h3>{title}</h3>
     <img src={imageUrl} alt={title} />
   </div>
+  )
 }
 
 

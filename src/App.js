@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Header from './components/Header.js';
 import Navbar from './components/Navbar';
-import Projects from './components/Projects';
+// import Projects from './components/Projects';
 import Footer from './components/Footer';
 
 
@@ -13,14 +13,13 @@ import Contact from './pages/Contact.js';
 import Resume from './pages/Resume.js';
 
 function App() {
-  const [currentSection, setCurrentSection] = useState('about-me');
+  const [currentSection, setCurrentSection] = useState('about-me', 'portfolio', 'contact');
 
-  const handleNavbarClick = (section) => {
+  let handleNavbarClick = (section) => {
     setCurrentSection(section);
   };
 
   return (
-    <section>
     <div>
       <Header>
         <Navbar
@@ -28,13 +27,14 @@ function App() {
           onNavbarClick={handleNavbarClick}
         />
       </Header>
+      <section>
       {currentSection === 'about-me' && <AboutMe />}
       {currentSection === 'portfolio' && <Portfolio />}
       {currentSection === 'contact' && <Contact />}
       {currentSection === 'resume' && <Resume />}
       <Footer />
+      </section>
     </div>
-    </section>
   );
 }
 
