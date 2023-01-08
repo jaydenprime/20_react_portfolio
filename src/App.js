@@ -13,7 +13,7 @@ import Contact from './pages/Contact.js';
 import Resume from './pages/Resume.js';
 
 function App() {
-  const [currentSection, setCurrentSection] = useState('about-me', 'portfolio', 'contact');
+  const [currentSection, setCurrentSection] = useState('about-me');
 
   let handleNavbarClick = (section) => {
     setCurrentSection(section);

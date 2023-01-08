@@ -10,22 +10,32 @@ function Portfolio() {
     return (
       <section>
         <div className='projectPage'>
+          <a href="https://github.com/jaydenprime/06_betterweather">
             <Project
               title="BetterWeather"
               imageUrl={betterweather} 
             />
+          </a>
+
+          <a href="https://github.com/jaydenprime/Code.X">
             <Project
               title="Code.X"
               imageUrl={codex} 
             />
+          </a>
+
+          <a href="https://github.com/jaydenprime/03_random_password_generator">
             <Project
               title="Random Password Generator"
               imageUrl={passgen}
             />
+          </a>
+          <a href="https://github.com/jaydenprime/Pet_Dating_App_MERN">
             <Project
               title="Pawfect Match"
-              imageUrl={pawfectmatch} 
+              imageUrl={pawfectmatch}
             />
+          </a>
         </div>
         </section>
     )
